@@ -1,6 +1,6 @@
 <?php
 
-require_once "../app/User.php"; // Assicurati di avere una classe User che gestisce le interazioni con il DB
+require_once "../app/User.php";
 
 class UserController
 {
@@ -35,7 +35,7 @@ class UserController
 
     public function login()
     {
-        session_start(); // Assicurati che la sessione sia avviata all'inizio del metodo
+        session_start();
 
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $username = $_POST["username"];
@@ -51,7 +51,7 @@ class UserController
                 exit();
             } else {
                 $_SESSION['error'] = "Username o password non corretti.";
-                header("Location: login.php");  // Reindirizza nuovamente alla pagina di login con il messaggio di errore
+                header("Location: login.php");
                 exit();
             }
         }
