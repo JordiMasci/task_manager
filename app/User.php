@@ -54,6 +54,7 @@ class User extends Database
         $stmt->bindParam(":username", $this->username);
         $stmt->execute();
 
-        return $stmt->rowCount() > 0; // Restituisce true se l'username esiste già
+        // Restituisce true se l'username esiste già
+        return $stmt->rowCount() > 0;
     }
 }
